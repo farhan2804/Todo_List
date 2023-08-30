@@ -6,17 +6,18 @@
   
   #fontAwesome {
     text-align: center;
-    background: blueviolet;
+    /* background: blueviolet; */
     border-radius: 50%;
     width: 25px;
     height:25px;
     font-size:25px;
-    color:white;
+    color:blueviolet;
   }
   
   #fontAwesome:hover {
-    background: red;
+    /* background: red; */
     cursor: pointer;
     transform: scale(1.2);
+    color:red;
   }
   

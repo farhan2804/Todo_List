@@ -7,7 +7,7 @@ const TodoItem = (props) => {
       <div className="Todo_Style">
         <i
           id="fontAwesome"
-          className="fa fa-times"
+          className="fa-solid fa-trash"
           aria-hidden="true"
           onClick={() => {
             props.onSelect(props.id);
@@ -18,5 +18,6 @@ const TodoItem = (props) => {
     </>
   );
 };
+{/* <i class="fa-solid fa-trash"></i> */}
 
 export default TodoItem;
