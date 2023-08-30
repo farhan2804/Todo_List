@@ -1,0 +1,22 @@
+.Todo_Style {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #fontAwesome {
+    text-align: center;
+    background: blueviolet;
+    border-radius: 50%;
+    width: 25px;
+    height:25px;
+    font-size:25px;
+    color:white;
+  }
+  
+  #fontAwesome:hover {
+    background: red;
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
