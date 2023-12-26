@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TodoItem from "../Todo/TodoItem";
 import "./List.css";
 
@@ -8,6 +8,12 @@ const List = () => {
   const [emptyMessage, setemptyMessage] = useState("");
   const [limitReach, setlimitReach] = useState("");
 
+  useEffect(() => {
+    // Load items from local storage when the component mounts
+    const storedItems = JSON.parse(localStorage.getItem("todoItems")) || [];
+    setItems(storedItems);
+  }, []);
+
   const setValue = (event) => {
     setInput(event.target.value);
     setemptyMessage("");
@@ -15,14 +21,20 @@ const List = () => {
 
   const listOfItems = () => {
     setItems((prevValue) => {
-      return [...prevValue, input];
+      const updatedItems = [...prevValue, input];
+      // Save the updated items array to local storage
+      localStorage.setItem("todoItems", JSON.stringify(updatedItems));
+      return updatedItems;
     });
     setInput("");
   };
 
   const deleteItems = (id) => {
     setItems((oldValue) => {
-      return oldValue.filter((arrElement, index) => index !== id);
+      const updatedItems = oldValue.filter((arrElement, index) => index !== id);
+      // Save the updated items array to local storage
+      localStorage.setItem("todoItems", JSON.stringify(updatedItems));
+      return updatedItems;
     });
     setlimitReach("");
   };
